@@ -5,7 +5,7 @@ This data will be stored in a database and will be viewable by the user to see h
 
 ##TODO
 
-- Make a rough site with authentication (Through Discord) that allows the user to just submit one of 4 emotions (Very sad, Sad, Neutral, Happy, Very Happy)
+- Make a rough site with authentication (Through Discord) that allows the user to just submit one of 5 emotions (Very sad, Sad, Neutral, Happy, Very Happy)
 
 - Allow user to enter a comment along with their selection of emotion to further substatiate their selection (Prefer some form of encryption for storage - prefer only user can decrypt message)
 

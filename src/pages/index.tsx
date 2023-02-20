@@ -26,7 +26,7 @@ const AuthenticatedFragment = () => {
 };
 
 const UserFragment = () => {
-  const {data: session, status: auth} = useSession();
+  const {data: session} = useSession();
 
   const userImage = session?.user.image != null ? session?.user.image : "https://pfps.gg/assets/pfps/4909-default-discord.png";
 
@@ -44,7 +44,7 @@ const UserFragment = () => {
 
 const Home: NextPage = () => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const {data: session, status: auth} = useSession();
+  const {status: auth} = useSession();
 
   return (
     <>
