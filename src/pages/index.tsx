@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-misused-promises */
+/* eslint-disable @next/next/no-img-element */
 import { type NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
@@ -17,6 +19,7 @@ const SignOutButton = () => {
 };
 
 const Home: NextPage = () => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const {data: session, status: auth} = useSession();
 
   return (
