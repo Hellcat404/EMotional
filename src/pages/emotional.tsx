@@ -1,10 +1,13 @@
 import { type NextPage } from "next";
+import { useSession } from "next-auth/react";
 
 import Head from "next/head";
 
 import EMotionalNavbar from "./navigation";
 
 const EMotional: NextPage = () => {
+    const {data: session, status: auth} = useSession();
+
     return(
         <>
             <Head>

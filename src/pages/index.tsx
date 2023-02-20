@@ -1,11 +1,9 @@
-/* eslint-disable @typescript-eslint/no-misused-promises */
 /* eslint-disable @next/next/no-img-element */
 import { type NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
 
-import { signOut, useSession } from "next-auth/react"
-import Image from "next/image";
+import { useSession } from "next-auth/react"
 
 import EMotionalNavbar from "./navigation";
 
@@ -22,30 +20,11 @@ const AuthenticatedFragment = () => {
   return(
     <>
       <Link className="m-3 p-3 border rounded bg-[#58f258] border-[#45bf45] shadow text-slate-900 hover:scale-110 transition-all" href="emotional">Continue to App</Link>
-      <UserFragment />
-    </>
-  );
-};
-
-const UserFragment = () => {
-  const {data: session} = useSession();
-
-  const userImage = session?.user.image != null ? session?.user.image : "https://pfps.gg/assets/pfps/4909-default-discord.png";
-
-  return(
-    <>
-      <div className="m-3 p-3 w-60 flex flex-col shadow items-center border rounded bg-[#3f58ca] border-[#263577] text-slate-100 font-mono">
-        <Image className="m-2 rounded-full border border-[#263577]" src={userImage} width={96} height={96} alt="User profile picture" />
-        <span className="text-2xl">{session?.user.name}</span>
-        <span className="mt-3">not you?</span>
-        <Link className="underline font-bold hover:no-underline hover:text-red-400" href="#" onClick={() => signOut()}>Sign out</Link>
-      </div>
     </>
   );
 };
 
 const Home: NextPage = () => {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const {status: auth} = useSession();
 
   return (
