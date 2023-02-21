@@ -17,6 +17,7 @@ const EMotional: NextPage = () => {
             </Head>
             <main className="flex min-h-screen flex-col items-center justify-center bg-[#4d6dffff]">
                 <EMotionalNavbar />
+                
             </main>
         </>
     );
