@@ -4,7 +4,6 @@ import { useSession } from "next-auth/react";
 import Head from "next/head";
 
 import EMotionalNavbar from "./navigation";
-
 const EMotional: NextPage = () => {
     const {data: session, status: auth} = useSession();
 
@@ -17,7 +16,6 @@ const EMotional: NextPage = () => {
             </Head>
             <main className="flex min-h-screen flex-col items-center justify-center bg-[#4d6dffff]">
                 <EMotionalNavbar />
-                
             </main>
         </>
     );
