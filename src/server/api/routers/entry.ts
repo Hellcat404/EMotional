@@ -15,4 +15,17 @@ export const entryRouter = createTRPCRouter({
         userId: ctx.input.userID,
     }});
   }),
+  getEntries: publicProcedure.input(z.object({
+    userID: z.string()
+    })).query((ctx)=>{
+        return ctx.ctx.prisma.entry.findMany({
+            select: {
+                emotion: true,
+                timestamp: true,
+            },
+            where: {
+                userId: ctx.input.userID,
+            },
+        },
+    )}),
 });

@@ -37,7 +37,7 @@ const AuthenticatedFragment = (session: Session) => {
     return(
         <>
             <Link href="" className="flex place-content-evenly flex-row h-full bg-[#5865F2] hover:bg-red-400 items-center justify-center shadow text-slate-100 transition-all" onClick={()=>{void signOut({callbackUrl: '/'})}} onMouseLeave={()=>{setText(session.user.name)}} onMouseOver={()=>{setText("Sign Out?")}}>
-                <Image className="m-2 rounded-full border border-[#454FBF]" src={userImage} width={50} height={50} alt="User profile picture"/>
+                <Image className="m-2 rounded-full" src={userImage} width={50} height={50} alt="User profile picture"/>
                 <span className="m-2">{text == null? session.user.name : text}</span>
             </Link>
         </>
