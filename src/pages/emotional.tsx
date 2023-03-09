@@ -16,6 +16,7 @@ import happyImg from '../../public/Happy.png';
 import neutralImg from '../../public/Neutral.png';
 import sadImg from '../../public/Sad.png';
 import vsadImg from '../../public/VerySad.png';
+import Link from "next/link";
 
 const emotionImgs: StaticImageData[] = [vsadImg, sadImg, neutralImg, happyImg, vhappyImg];
 
@@ -45,6 +46,7 @@ const EmotionSelector = (session: Session) => {
                     <span className="font-mono font-semibold text-xl text-slate-900">Submitted emotion</span>
                     <Image src={emotionImgs[selection]} width={88} height={88} alt="Selected emotion"/>
                     <button className={"m-3 p-3 border rounded bg-[#58f258] border-[#45bf45] shadow text-slate-900 hover:scale-110 transition-all"} onClick={()=>{resetSubmission()}}>Submit new Emotion</button>
+                    <Link className={"m-3 p-3 border rounded bg-[#ffcc4dff] border-[#c49d3a] shadow text-slate-900 hover:scale-110 transition-all"} href="/timeline">View Your Timeline</Link>
                 </div>
             </>
         );
@@ -61,6 +63,7 @@ const EmotionSelector = (session: Session) => {
                         <Image className={"m-2 cursor-pointer" + (selection != 4 ? " saturate-0" : "")} src={vhappyImg} width={64} height={64} alt="Very Happy" onClick={()=>{changeSelection(4)}} />
                     </div>
                     <button className={"m-3 p-3 border rounded bg-[#58f258] border-[#45bf45] shadow text-slate-900 hover:scale-110 transition-all"} onClick={()=>{void addEntry(session, selection)}}>Submit</button>
+                    <Link className={"m-3 p-3 border rounded bg-[#ffcc4dff] border-[#c49d3a] shadow text-slate-900 hover:scale-110 transition-all"} href="/timeline">View Your Timeline</Link>
                 </div>
             </>
         );
