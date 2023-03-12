@@ -22,13 +22,10 @@ const emotionImgs: StaticImageData[] = [vsadImg, sadImg, neutralImg, happyImg, v
 
 const EmotionSelector = (session: Session) => {
     const createEntry = api.entry.createEntry.useMutation();  
-    const getEntries = api.entry.getEntries.useQuery({userID: session.user.id});
 
-    const addEntry = async (session: Session, emotion: number) => {
+    const addEntry = (session: Session, emotion: number) => {
         changeSubmitted(true);
         createEntry.mutate({emotion: emotion, userID: session.user.id});
-        await getEntries.refetch();
-        console.log(getEntries.data);
     };
 
     const resetSubmission = () => {
