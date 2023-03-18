@@ -10,13 +10,14 @@ import EMotionalNavbar from "./navigation";
 import type { Session } from "next-auth";
 import type {StaticImageData} from "next/image";
 import Image from "next/image";
+import Link from "next/link";
+
 
 import vhappyImg from '../../public/VeryHappy.png';
 import happyImg from '../../public/Happy.png';
 import neutralImg from '../../public/Neutral.png';
 import sadImg from '../../public/Sad.png';
 import vsadImg from '../../public/VerySad.png';
-import Link from "next/link";
 
 const emotionImgs: StaticImageData[] = [vsadImg, sadImg, neutralImg, happyImg, vhappyImg];
 
